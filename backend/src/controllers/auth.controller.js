@@ -176,10 +176,18 @@ async function loginFoodPartner(req, res) {
     })
 }
 
+function logoutFoodPartner(req,res) {
+    res.clearCookie("token");
+    res.status(200).json({
+        message: "Food Partner logged out successfully",
+    });
+}
+
 module.exports = {
     registerUser,
     loginUser,
     logoutUser,
     registerFoodPartner,
     loginFoodPartner,
+    logoutFoodPartner
 }
